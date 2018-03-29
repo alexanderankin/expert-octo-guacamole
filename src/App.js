@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import $ from 'jquery';
+import 'bootstrap';
+
 import './App.css';
 
-import 'bootstrap/dist/css/bootstrap.css';
-
+import Header from './Components/Header';
 import UserForm from './Components/UserForm';
 import PasswordForm from './Components/PasswordForm';
 import SignupForm from './Components/SignupForm';
@@ -64,20 +66,14 @@ class App extends Component {
       // form = <SignupForm result={this.signupFormResult} username={'new'}/>;
     }
 
-    return (
-      <div>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+    return <div>
+      <Header />
+      <div className="container-fluid" style={{ padding: 0 }}>
+        <div className="row" style={{ marginTop: 66, marginLeft: 0, marginRight: 0 }}>
+          {form}
         </div>
-        {form}
       </div>
-    );
+    </div>;
   }
 }
 

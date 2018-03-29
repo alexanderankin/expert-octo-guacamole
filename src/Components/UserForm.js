@@ -26,6 +26,7 @@ class UserForm extends Component {
     jQuery.ajax({
       method: 'post',
       url: '/api/login/user',
+      contentType: "application/json",
       data: JSON.stringify({ username }),
       // data: { username },
       dataType: 'json',
